@@ -3,6 +3,11 @@ import { Button } from "./ui/Button";
 import { ChevronRight, Circle } from "lucide-react";
 import { BackgroundNotifications } from "./ui/BackgroundNotifications";
 
+// ─── Link do Checkout ────────────────────────────────────────────
+// Para trocar o link basta alterar esta constante.
+const CHECKOUT_URL = "https://pay.hub.la/FgOgZuJrbElK4YWprrje";
+// ─────────────────────────────────────────────────────────────────
+
 export function Hero() {
   return (
     <section className="relative w-full overflow-hidden pt-32 pb-24 px-6">
@@ -44,7 +49,9 @@ export function Hero() {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center gap-6 pt-4 w-full sm:w-auto">
-            <Button className="w-full sm:w-auto px-8 py-4">Garantir Minha Vaga</Button>
+            <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+              <Button className="w-full px-8 py-4">Garantir Minha Vaga</Button>
+            </a>
           </div>
         </div>
 

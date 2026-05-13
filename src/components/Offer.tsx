@@ -1,6 +1,11 @@
 import { AlertCircle, Lock } from "lucide-react";
 import { Button } from "./ui/Button";
 
+// ─── Link do Checkout ────────────────────────────────────────────
+// Para trocar o link basta alterar esta constante.
+const CHECKOUT_URL = "https://pay.hub.la/FgOgZuJrbElK4YWprrje";
+// ─────────────────────────────────────────────────────────────────
+
 // Configuração da Fase de Vendas
 // Valores aceitos: "pre-sale" ou "launch"
 const CURRENT_PHASE: "pre-sale" | "launch" = "pre-sale";
@@ -34,9 +39,11 @@ export function Offer() {
             </div>
 
             <div>
-              <Button className="w-full text-lg mb-4 py-6 font-bold bg-[#BFD217] text-black hover:bg-[#BFD217]/90">
-                Entre agora no Protocolo
-              </Button>
+              <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer" className="block">
+                <Button className="w-full text-lg mb-4 py-6 font-bold bg-[#BFD217] text-black hover:bg-[#BFD217]/90">
+                  Entre agora no Protocolo
+                </Button>
+              </a>
               <p className="text-neutral-400 font-medium text-xs">e participe da próxima turma AO VIVO.</p>
             </div>
           </div>
@@ -80,9 +87,11 @@ export function Offer() {
             </div>
 
             <div>
-              <Button className="w-full text-lg mb-4 py-6 font-bold bg-[#BFD217] text-black hover:bg-[#BFD217]/90">
-                Entre agora no Protocolo
-              </Button>
+              <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer" className="block">
+                <Button className="w-full text-lg mb-4 py-6 font-bold bg-[#BFD217] text-black hover:bg-[#BFD217]/90">
+                  Entre agora no Protocolo
+                </Button>
+              </a>
               <p className="text-neutral-400 font-medium text-xs">e participe da próxima turma AO VIVO.</p>
             </div>
           </div>
