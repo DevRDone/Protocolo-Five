@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { PlayCircle, Settings, PenTool, Megaphone, CreditCard, Gift, CheckCircle2 } from "lucide-react";
 
 const schedule = [
@@ -55,7 +55,7 @@ const schedule = [
 ];
 
 export function Cronograma() {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -95,7 +95,7 @@ export function Cronograma() {
 
             return (
               <motion.div key={index} variants={itemVariants} className="relative flex items-center md:justify-between flex-col md:flex-row gap-8 md:gap-0 pl-16 md:pl-0">
-                
+
                 {/* Desktop Left / Mobile Right */}
                 <div className={`w-full md:w-5/12 ${isEven ? 'md:text-right md:pr-12' : 'md:order-3 md:pl-12'}`}>
                   <div className="glass p-6 md:p-8 rounded-2xl border border-white/10 hover:border-[#BFD217]/50 hover:shadow-[0_0_15px_rgba(191,210,23,0.3)] transition-all duration-300 bg-white/5 backdrop-blur-md">
@@ -129,28 +129,28 @@ export function Cronograma() {
 
           {/* Card Extra */}
           <motion.div variants={itemVariants} className="relative flex items-center md:justify-between flex-col md:flex-row gap-8 md:gap-0 pl-16 md:pl-0 pt-8">
-             <div className="w-full md:w-5/12 md:text-right md:pr-12 md:order-1">
-                <div className="p-6 md:p-8 rounded-2xl border-2 border-neon-primary hover:shadow-[0_0_25px_rgba(191,210,23,0.5)] transition-all duration-300 bg-neon-primary/10 backdrop-blur-md relative overflow-hidden group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-neon-primary/0 via-neon-primary/20 to-neon-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
-                  <div className="relative z-10">
-                    <div className="flex items-center gap-3 mb-2 md:justify-end">
-                      <Gift className="text-neon-primary w-8 h-8 md:hidden" />
-                      <h3 className="text-3xl font-bold text-white uppercase tracking-wider">
-                        + Conteúdo <span className="text-neon-primary drop-shadow-[0_0_8px_rgba(191,210,23,0.8)]">Extra</span>
-                      </h3>
-                    </div>
-                    <p className="text-neutral-300 md:text-right text-lg">
-                      Materiais bônus exclusivos e surpresas preparadas para você durante o protocolo.
-                    </p>
+            <div className="w-full md:w-5/12 md:text-right md:pr-12 md:order-1">
+              <div className="p-6 md:p-8 rounded-2xl border-2 border-neon-primary hover:shadow-[0_0_25px_rgba(191,210,23,0.5)] transition-all duration-300 bg-neon-primary/10 backdrop-blur-md relative overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-r from-neon-primary/0 via-neon-primary/20 to-neon-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                <div className="relative z-10">
+                  <div className="flex items-center gap-3 mb-2 md:justify-end">
+                    <Gift className="text-neon-primary w-8 h-8 md:hidden" />
+                    <h3 className="text-3xl font-bold text-white uppercase tracking-wider">
+                      + Conteúdo <span className="text-neon-primary drop-shadow-[0_0_8px_rgba(191,210,23,0.8)]">Extra</span>
+                    </h3>
                   </div>
+                  <p className="text-neutral-300 md:text-right text-lg">
+                    Materiais bônus exclusivos e surpresas preparadas para você durante o protocolo.
+                  </p>
                 </div>
-             </div>
+              </div>
+            </div>
 
-             <div className="absolute left-6 md:left-1/2 w-16 h-16 rounded-full border-4 border-[#0a0a0a] bg-neon-primary flex items-center justify-center transform -translate-x-1/2 md:order-2 z-10 shadow-[0_0_25px_rgba(191,210,23,0.6)]">
-                <Gift className="text-black w-8 h-8" />
-             </div>
+            <div className="absolute left-6 md:left-1/2 w-16 h-16 rounded-full border-4 border-[#0a0a0a] bg-neon-primary flex items-center justify-center transform -translate-x-1/2 md:order-2 z-10 shadow-[0_0_25px_rgba(191,210,23,0.6)]">
+              <Gift className="text-black w-8 h-8" />
+            </div>
 
-             <div className="hidden md:block w-5/12 md:order-3"></div>
+            <div className="hidden md:block w-5/12 md:order-3"></div>
           </motion.div>
         </div>
       </motion.div>
