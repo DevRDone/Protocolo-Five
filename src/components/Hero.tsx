@@ -2,6 +2,7 @@ import { Badge } from "./ui/Badge";
 import { Button } from "./ui/Button";
 import { ChevronRight, Circle } from "lucide-react";
 import { BackgroundNotifications } from "./ui/BackgroundNotifications";
+import Image from "next/image";
 
 // ─── Link do Checkout ────────────────────────────────────────────
 // Para trocar o link basta alterar esta constante.
@@ -20,9 +21,12 @@ export function Hero() {
         {/* Left Column */}
         <div className="flex flex-col items-start text-left lg:w-1/2 space-y-8">
 
-          <img
-            src="/logo.png"
+          <Image
+            src="/logo.webp"
             alt="Protocolo Five Logo"
+            width={200}
+            height={50}
+            priority
             className="w-50 h-auto mb-2 drop-shadow-[0_0_15px_rgba(191,210,23,0.2)]"
           />
 

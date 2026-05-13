@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 interface BackgroundNotificationsProps {
   rowCount?: number;
@@ -42,10 +43,12 @@ export function BackgroundNotifications({
               {/* Primeiro bloco de imagens */}
               <div className={`flex ${gapSize} shrink-0`}>
                 {Array.from({ length: itemsPerRow }).map((_, i) => (
-                  <img
+                  <Image
                     key={i}
                     src="/Notificacoes.jpeg"
                     alt=""
+                    width={350}
+                    height={127}
                     className="w-[280px] md:w-[350px] h-auto shrink-0 rounded-2xl object-cover shadow-[0_0_30px_rgba(191,210,23,0.1)] grayscale mix-blend-screen filter"
                   />
                 ))}
@@ -53,10 +56,12 @@ export function BackgroundNotifications({
               {/* Segundo bloco idêntico para criar o loop contínuo e perfeito */}
               <div className={`flex ${gapSize} shrink-0`}>
                 {Array.from({ length: itemsPerRow }).map((_, i) => (
-                  <img
+                  <Image
                     key={`dup-${i}`}
                     src="/Notificacoes.jpeg"
                     alt=""
+                    width={350}
+                    height={127}
                     className="w-[280px] md:w-[350px] h-auto shrink-0 rounded-2xl object-cover shadow-[0_0_30px_rgba(191,210,23,0.1)] grayscale mix-blend-screen filter"
                   />
                 ))}
