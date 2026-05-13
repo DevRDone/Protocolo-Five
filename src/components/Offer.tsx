@@ -3,7 +3,7 @@ import { Button } from "./ui/Button";
 
 // Configuração da Fase de Vendas
 // Valores aceitos: "pre-sale" ou "launch"
-const CURRENT_PHASE = "pre-sale";
+const CURRENT_PHASE: "pre-sale" | "launch" = "pre-sale";
 
 export function Offer() {
   return (
