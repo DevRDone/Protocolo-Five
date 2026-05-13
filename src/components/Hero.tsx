@@ -33,13 +33,13 @@ export function Hero() {
 
           <div className="text-lg md:text-xl text-neutral-400 max-w-xl font-light space-y-4">
             <p className="text-neutral-300">
-              Aprenda como funciona uma operação real utilizando o modelo After Pay dentro de um dos nichos que mais vendem hoje no mercado.
+              Aprenda como funciona uma operação de After Pay dentro de um dos nichos que mais vendem hoje no mercado.
             </p>
             <p className="font-medium text-white">
-              Sem teoria inútil. Sem promessa falsa. Sem personagem vendendo ilusão.
+              O Protocolo Five é uma mentoria AO VIVO criada por mim e pela minha equipe interna, onde você vai aprender na prática como estruturar e operar esse modelo.
             </p>
             <p>
-              O Protocolo Five é um treinamento <span className="text-white font-medium">AO VIVO</span> criado por mim e pela minha equipe interna, mostrando na prática como estruturar uma operação nesse modelo.
+              Além das aulas <span className="text-white font-medium">AO VIVO,</span> você também terá acesso a um dos produtos que mais vendem hoje no After Pay, já validado e pronto para operação.
             </p>
           </div>
 
