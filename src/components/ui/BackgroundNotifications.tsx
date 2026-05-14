@@ -1,12 +1,8 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Image from "next/image";
 
 interface BackgroundNotificationsProps {
   rowCount?: number;
   itemsPerRow?: number;
-  animationSpeed?: number;
   gapSize?: string;
   opacity?: string;
 }
@@ -14,33 +10,22 @@ interface BackgroundNotificationsProps {
 export function BackgroundNotifications({
   rowCount = 3,
   itemsPerRow = 6,
-  animationSpeed = 40,
   gapSize = "gap-16",
   opacity = "opacity-20",
 }: BackgroundNotificationsProps) {
   return (
     <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none flex flex-col justify-around py-16 md:py-24">
       {Array.from({ length: rowCount }).map((_, rowIndex) => {
-        // Alterna a direção do scroll por fileira (par = esquerda, ímpar = direita)
-        const direction = rowIndex % 2 === 0 ? -1 : 1;
+        // Fileiras pares → esquerda, ímpares → direita
+        const isLeft = rowIndex % 2 === 0;
+        const animationClass = isLeft
+          ? "animate-marquee-left"
+          : "animate-marquee-right";
 
         return (
-          <div
-            key={rowIndex}
-            className="w-full flex items-center"
-          >
-            <motion.div
-              className={`flex ${gapSize} w-max ${opacity}`}
-              animate={{
-                x: direction === -1 ? [0, "-50%"] : ["-50%", 0],
-              }}
-              transition={{
-                repeat: Infinity,
-                duration: animationSpeed,
-                ease: "linear",
-              }}
-            >
-              {/* Primeiro bloco de imagens */}
+          <div key={rowIndex} className="w-full flex items-center overflow-hidden">
+            <div className={`flex ${gapSize} w-max ${opacity} ${animationClass}`}>
+              {/* Primeiro bloco */}
               <div className={`flex ${gapSize} shrink-0`}>
                 {Array.from({ length: itemsPerRow }).map((_, i) => (
                   <Image
@@ -53,7 +38,7 @@ export function BackgroundNotifications({
                   />
                 ))}
               </div>
-              {/* Segundo bloco idêntico para criar o loop contínuo e perfeito */}
+              {/* Segundo bloco idêntico para criar loop contínuo e perfeito */}
               <div className={`flex ${gapSize} shrink-0`}>
                 {Array.from({ length: itemsPerRow }).map((_, i) => (
                   <Image
@@ -66,12 +51,12 @@ export function BackgroundNotifications({
                   />
                 ))}
               </div>
-            </motion.div>
+            </div>
           </div>
         );
       })}
 
-      {/* Máscara de gradiente nas bordas para as imagens sumirem suavemente (opcional mas melhora muito a UI) */}
+      {/* Máscara de gradiente nas bordas */}
       <div className="absolute inset-0 bg-[linear-gradient(90deg,black_0%,transparent_10%,transparent_90%,black_100%)] z-10 pointer-events-none"></div>
     </div>
   );
