@@ -12,7 +12,7 @@ const targetAudience = [
 export function AfterPay() {
   return (
     <section className="w-full relative overflow-hidden border-t border-white/5">
-      <BackgroundNotifications opacity="opacity-[0.02]" animationSpeed={50} />
+      <BackgroundNotifications opacity="opacity-[0.02]" />
 
       <div className="max-w-5xl mx-auto px-6 py-24 relative z-10">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-neon-primary/5 blur-[120px] -z-10 rounded-full pointer-events-none"></div>
